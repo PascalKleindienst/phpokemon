@@ -15,17 +15,12 @@ class Pokedex extends Endpoint
     protected $endpoint = 'pokedex';
 
     /**
-     * @return \Atog\Api\Model|string
+     * @return \Atog\Api\Model|null
      */
     public function get()
     {
-        $response = $this->client->get($this->getEndpointUrl(1, true));
-
-        // return new model instance with fetched content if response is okay
-        if ($response->isOk()) {
-            return $this->model->newInstance($response->getContent());
-        }
-
-        return $response->getContent();
+        return $this->respond(
+            $this->client->get($this->getEndpointUrl(1, true))
+        );
     }
 }
