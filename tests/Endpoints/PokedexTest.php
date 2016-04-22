@@ -1,8 +1,7 @@
 <?php
-namespace Atog\PHPokemon;
+namespace Atog\PHPokemon\Endpoints;
 
 use Atog\Api\Model;
-use Atog\PHPokemon\Endpoints\Pokedex;
 use EnricoStahn\JsonAssert\Assert as JsonAssert;
 
 /**
@@ -22,7 +21,7 @@ class PokedexTest extends \PHPUnit_Framework_TestCase
     {
         $this->endpoint = new Pokedex($this->setupClient(Pokedex::class), new Model());
     }
-    
+
     public function testGet()
     {
         $response = $this->endpoint->get();
