@@ -2,6 +2,7 @@
 namespace Atog\PHPokemon\Endpoints;
 
 use Atog\Api\Model;
+use Atog\PHPokemon\EndpointTestTrait;
 use EnricoStahn\JsonAssert\Assert as JsonAssert;
 
 /**
