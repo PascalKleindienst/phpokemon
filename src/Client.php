@@ -24,10 +24,12 @@ class Client extends AbstractClient
     public function __construct(array $endpoints = [], array $config = [])
     {
         $defaultEndpoints = [
-            Endpoints\Pokedex::class
+            Endpoints\Pokedex::class,
+//            Endpoints\Pokemon::class,
         ];
         $models = [
-            'Pokedex' => Models\Pokedex::class
+            'Pokedex' => Models\Pokedex::class,
+//            'Pokemon' => Models\Pokemon::class
         ];
 
         $config['models'] = $models;
