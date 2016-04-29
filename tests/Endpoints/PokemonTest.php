@@ -27,7 +27,7 @@ class PokemonTest extends \PHPUnit_Framework_TestCase
     public function testAll()
     {
         $response = $this->endpoint->all();
-        $this->assertJsonMatchesSchema(__DIR__ . '/PokemonAll.schema.json', json_decode($response->toJson()));
+        $this->assertJsonMatchesSchema(__DIR__ . '/_paginated.schema.json', json_decode($response->toJson()));
     }
 
     public function testFindByName()
