@@ -17,6 +17,7 @@ trait EndpointTestTrait
 
     public function setupClient($options = [])
     {
+        $options = array_merge(['curl' => [CURLOPT_TIMEOUT => 500, CURLOPT_FOLLOWLOCATION => false]], $options);
         $endpoints = [Pokedex::class, Pokemon::class];
         $client = $this->getMockForAbstractClass(Client::class, [$endpoints, $options]);
         $reflection = new ReflectionClass(Client::class);
