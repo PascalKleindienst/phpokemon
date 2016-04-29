@@ -53,7 +53,7 @@ class Pokemon extends Model
     {
         $this->attributes['moves'] = $this->makeCollection($values);
     }
-
+    
     /**
      * Save types as collection
      * @param $values
@@ -61,5 +61,14 @@ class Pokemon extends Model
     public function setTypesAttribute($values)
     {
         $this->attributes['types'] = $this->makeCollection($values);
+    }
+    
+    /**
+     * Save sprites as collection
+     * @param $values
+     */
+    public function setSpritesAttribute($values)
+    {
+        $this->attributes['sprites'] = $this->makeCollection($values);
     }
 }
