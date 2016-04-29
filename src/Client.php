@@ -25,11 +25,11 @@ class Client extends AbstractClient
     {
         $defaultEndpoints = [
             Endpoints\Pokedex::class,
-//            Endpoints\Pokemon::class,
+            Endpoints\Pokemon::class,
         ];
         $models = [
             'Pokedex' => Models\Pokedex::class,
-//            'Pokemon' => Models\Pokemon::class
+            'Pokemon' => Models\Pokemon::class
         ];
 
         $config['models'] = $models;

@@ -20,7 +20,8 @@ class PokedexTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->endpoint = new Pokedex($this->setupClient(Pokedex::class), new Model());
+        $this->setupClient();
+        $this->endpoint = new Pokedex($this->client, new Model());
     }
 
     public function testGet()
