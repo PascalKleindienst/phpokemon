@@ -7,10 +7,19 @@ use \Atog\PHPokemon\Models;
 
 /**
  * Class Client
+ * @property-read \Atog\PHPokemon\Endpoints\Pokedex pokedex
+ * @property-read \Atog\PHPokemon\Endpoints\Pokemon pokemon
+ * @property-read \Atog\PHPokemon\Endpoints\Types types
+ * @property-read \Atog\PHPokemon\Endpoints\Moves moves
+ * @property-read \Atog\PHPokemon\Endpoints\Abilities abilities
  * @package Atog\PHPokemon
  */
 class Client extends AbstractClient
 {
+    /**
+     * @var $abilities
+     */
+
     /**
      * @var string
      */
@@ -28,12 +37,14 @@ class Client extends AbstractClient
             Endpoints\Pokemon::class,
             Endpoints\Types::class,
             Endpoints\Moves::class,
+            Endpoints\Abilities::class,
         ];
         $models = [
-            'Pokedex' => Models\Pokedex::class,
-            'Pokemon' => Models\Pokemon::class,
-            'Types'   => Models\Types::class,
-            'Moves'   => Models\Moves::class,
+            'Pokedex'   => Models\Pokedex::class,
+            'Pokemon'   => Models\Pokemon::class,
+            'Types'     => Models\Types::class,
+            'Moves'     => Models\Moves::class,
+            'Abilities' => Models\Abilities::class,
         ];
 
         $config['models'] = $models;
