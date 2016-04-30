@@ -27,11 +27,13 @@ class Client extends AbstractClient
             Endpoints\Pokedex::class,
             Endpoints\Pokemon::class,
             Endpoints\Types::class,
+            Endpoints\Moves::class,
         ];
         $models = [
             'Pokedex' => Models\Pokedex::class,
             'Pokemon' => Models\Pokemon::class,
             'Types'   => Models\Types::class,
+            'Moves'   => Models\Moves::class,
         ];
 
         $config['models'] = $models;
