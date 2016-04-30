@@ -1,9 +1,7 @@
 <?php
 namespace Atog\PHPokemon\Endpoints;
 
-use Atog\Api\Model;
 use Atog\PHPokemon\EndpointTestTrait;
-use EnricoStahn\JsonAssert\Assert as JsonAssert;
 
 /**
  * Class PokedexTest
@@ -11,17 +9,11 @@ use EnricoStahn\JsonAssert\Assert as JsonAssert;
  */
 class PokedexTest extends \PHPUnit_Framework_TestCase
 {
-    use EndpointTestTrait, JsonAssert;
-
-    /**
-     * @var \Atog\PHPokemon\Endpoints\Pokedex
-     */
-    protected $endpoint;
+    use EndpointTestTrait;
 
     public function setUp()
     {
-        $this->setupClient();
-        $this->endpoint = new Pokedex($this->client, new Model());
+        $this->setupEndpoint(Pokedex::class);
     }
 
     public function testGet()

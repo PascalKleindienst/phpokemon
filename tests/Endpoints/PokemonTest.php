@@ -1,9 +1,7 @@
 <?php
 namespace Atog\PHPokemon\Endpoints;
 
-use Atog\Api\Model;
 use Atog\PHPokemon\EndpointTestTrait;
-use EnricoStahn\JsonAssert\Assert as JsonAssert;
 
 /**
  * Class PokemonTest
@@ -11,34 +9,25 @@ use EnricoStahn\JsonAssert\Assert as JsonAssert;
  */
 class PokemonTest extends \PHPUnit_Framework_TestCase
 {
-    use EndpointTestTrait, JsonAssert;
-
-    /**
-     * @var \Atog\PHPokemon\Endpoints\Pokemon
-     */
-    protected $endpoint;
+    use EndpointTestTrait;
 
     public function setUp()
     {
-        $this->setupClient();
-        $this->endpoint = new Pokemon($this->client, new Model());
+        $this->setupEndpoint(Pokemon::class);
     }
 
     public function testAll()
     {
-        $response = $this->endpoint->all();
-        $this->assertJsonMatchesSchema(__DIR__ . '/_paginated.schema.json', json_decode($response->toJson()));
+        $this->helperTestAll();
     }
 
     public function testFindByName()
     {
-        $response = $this->endpoint->find('Bulbasaur');
-        $this->assertJsonMatchesSchema(__DIR__ . '/Pokemon.schema.json', json_decode($response->toJson()));
+        $this->helperTestFind('Bulbasaur', 'Pokemon.schema.json');
     }
 
     public function testFindByNumber()
     {
-        $response = $this->endpoint->find(42);
-        $this->assertJsonMatchesSchema(__DIR__ . '/Pokemon.schema.json', json_decode($response->toJson()));
+        $this->helperTestFind(42, 'Pokemon.schema.json');
     }
 }
