@@ -21,8 +21,19 @@ use \Atog\PHPokemon\Models;
 class Client extends AbstractClient
 {
     /**
-     * @var $abilities
+     * @var array
      */
+    protected $defaultEndpoints = [
+        Endpoints\Pokedex::class,
+        Endpoints\Pokemon::class,
+        Endpoints\Types::class,
+        Endpoints\Moves::class,
+        Endpoints\Abilities::class,
+        Endpoints\EggGroups::class,
+        Endpoints\Descriptions::class,
+        Endpoints\Sprites::class,
+        Endpoints\Games::class
+    ];
 
     /**
      * @var string
@@ -36,18 +47,7 @@ class Client extends AbstractClient
      */
     public function __construct(array $endpoints = [], array $config = [])
     {
-        $defaultEndpoints = [
-            Endpoints\Pokedex::class,
-            Endpoints\Pokemon::class,
-            Endpoints\Types::class,
-            Endpoints\Moves::class,
-            Endpoints\Abilities::class,
-            Endpoints\EggGroups::class,
-            Endpoints\Descriptions::class,
-            Endpoints\Sprites::class,
-            Endpoints\Games::class
-        ];
-        $models = [
+        $config['models'] = [
             'Pokedex'      => Models\Pokedex::class,
             'Pokemon'      => Models\Pokemon::class,
             'Types'        => Models\Types::class,
@@ -58,8 +58,6 @@ class Client extends AbstractClient
             'Sprites'      => Models\Sprites::class,
             'Games'        => Models\Games::class
         ];
-
-        $config['models'] = $models;
-        parent::__construct(array_merge($defaultEndpoints, $endpoints), $config);
+        parent::__construct(array_merge($this->defaultEndpoints, $endpoints), $config);
     }
 }
