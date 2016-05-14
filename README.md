@@ -22,7 +22,14 @@ $ composer require atog/phpokemon
 ## Usage
 
 ``` php
-...
+<?php
+require_once 'vendor/autoload.php';
+
+$client = new \Atog\PHPokemon\Client();
+$client->pokemon->find('bulbasaur'); // returns Atog\PHPokemon\Models\Pokemon
+$client->pokemon->find(2); // returns Atog\PHPokemon\Models\Pokemon
+$client->moves->find(15); // returns Atog\PHPokemon\Models\Moves
+
 ```
 
 ## Change log
