@@ -15,6 +15,7 @@ use \Atog\PHPokemon\Models;
  * @property-read \Atog\PHPokemon\Endpoints\EggGroups eggGroups
  * @property-read \Atog\PHPokemon\Endpoints\Descriptions descriptions
  * @property-read \Atog\PHPokemon\Endpoints\Sprites sprites
+ * @property-read \Atog\PHPokemon\Endpoints\Games games
  * @package Atog\PHPokemon
  */
 class Client extends AbstractClient
@@ -43,7 +44,8 @@ class Client extends AbstractClient
             Endpoints\Abilities::class,
             Endpoints\EggGroups::class,
             Endpoints\Descriptions::class,
-            Endpoints\Sprites::class
+            Endpoints\Sprites::class,
+            Endpoints\Games::class
         ];
         $models = [
             'Pokedex'      => Models\Pokedex::class,
@@ -53,7 +55,8 @@ class Client extends AbstractClient
             'Abilities'    => Models\Abilities::class,
             'EggGroups'    => Models\EggGroups::class,
             'Descriptions' => Models\Descriptions::class,
-            'Sprites'      => Models\Sprites::class
+            'Sprites'      => Models\Sprites::class,
+            'Games'        => Models\Games::class
         ];
 
         $config['models'] = $models;
