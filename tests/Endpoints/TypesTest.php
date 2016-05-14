@@ -5,7 +5,7 @@ use Atog\PHPokemon\EndpointTestTrait;
 
 /**
  * Class PokemonTest
- * @package Atog\PHPokemon
+ * @package Atog\PHPokemon\Endpoints
  */
 class TypesTest extends \PHPUnit_Framework_TestCase
 {

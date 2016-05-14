@@ -5,7 +5,7 @@ use Atog\PHPokemon\EndpointTestTrait;
 
 /**
  * Class EggGroupsTest
- * @package Atog\PHPokemon
+ * @package Atog\PHPokemon\Endpoints
  */
 class EggGroupsTest extends \PHPUnit_Framework_TestCase
 {
